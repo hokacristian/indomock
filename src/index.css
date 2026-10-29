@@ -1,0 +1,217 @@
+@import 'tailwindcss';
+
+/* Class-based dark mode (toggled on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Semantic design tokens ─────────────────────────────────────────────
+   Light + dark designed together; every text pair is ≥ 4.5:1. */
+:root {
+  --im-canvas: #f8fafc;
+  --im-surface: #ffffff;
+  --im-surface-2: #f1f5f9;
+  --im-surface-3: #e2e8f0;
+  --im-line: #e2e8f0;
+  --im-line-strong: #cbd5e1;
+  --im-fg: #0f172a;
+  --im-fg-muted: #475569;
+  --im-fg-subtle: #64748b;
+  --im-accent: #15803d;
+  --im-accent-hover: #166534;
+  --im-accent-fg: #ffffff;
+  --im-accent-text: #15803d;
+  --im-accent-soft: rgb(21 128 61 / 0.1);
+  --im-danger: #b91c1c;
+  --im-danger-soft: rgb(185 28 28 / 0.08);
+  --im-warn: #b45309;
+  --im-warn-soft: rgb(180 83 9 / 0.1);
+  --im-info: #0369a1;
+  --im-info-soft: rgb(3 105 161 / 0.08);
+  --im-merah: #dc2626;
+  --im-code-bg: #f8fafc;
+  --im-syn-key: #0369a1;
+  --im-syn-str: #15803d;
+  --im-syn-num: #b45309;
+  --im-syn-bool: #7c3aed;
+  --im-syn-null: #be123c;
+  --im-syn-punct: #64748b;
+  --im-ring: #0f172a;
+  --im-shadow: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 1px rgb(15 23 42 / 0.04);
+  --im-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.dark {
+  --im-canvas: #020617;
+  --im-surface: #0b1020;
+  --im-surface-2: #121a2e;
+  --im-surface-3: #1a2440;
+  --im-line: #1e293b;
+  --im-line-strong: #334155;
+  --im-fg: #f8fafc;
+  --im-fg-muted: #94a3b8;
+  --im-fg-subtle: #8391a7;
+  --im-accent: #22c55e;
+  --im-accent-hover: #4ade80;
+  --im-accent-fg: #052e16;
+  --im-accent-text: #4ade80;
+  --im-accent-soft: rgb(34 197 94 / 0.12);
+  --im-danger: #f87171;
+  --im-danger-soft: rgb(248 113 113 / 0.1);
+  --im-warn: #fbbf24;
+  --im-warn-soft: rgb(251 191 36 / 0.1);
+  --im-info: #38bdf8;
+  --im-info-soft: rgb(56 189 248 / 0.1);
+  --im-merah: #ef4444;
+  --im-code-bg: #060b18;
+  --im-syn-key: #7dd3fc;
+  --im-syn-str: #86efac;
+  --im-syn-num: #fcd34d;
+  --im-syn-bool: #c4b5fd;
+  --im-syn-null: #fda4af;
+  --im-syn-punct: #64748b;
+  --im-ring: #f8fafc;
+  --im-shadow: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 1px 2px rgb(0 0 0 / 0.4);
+  --im-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+@theme inline {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --color-canvas: var(--im-canvas);
+  --color-surface: var(--im-surface);
+  --color-surface-2: var(--im-surface-2);
+  --color-surface-3: var(--im-surface-3);
+  --color-line: var(--im-line);
+  --color-line-strong: var(--im-line-strong);
+  --color-fg: var(--im-fg);
+  --color-fg-muted: var(--im-fg-muted);
+  --color-fg-subtle: var(--im-fg-subtle);
+  --color-accent: var(--im-accent);
+  --color-accent-hover: var(--im-accent-hover);
+  --color-accent-fg: var(--im-accent-fg);
+  --color-accent-text: var(--im-accent-text);
+  --color-accent-soft: var(--im-accent-soft);
+  --color-danger: var(--im-danger);
+  --color-danger-soft: var(--im-danger-soft);
+  --color-warn: var(--im-warn);
+  --color-warn-soft: var(--im-warn-soft);
+  --color-info: var(--im-info);
+  --color-info-soft: var(--im-info-soft);
+  --color-merah: var(--im-merah);
+  --color-code: var(--im-code-bg);
+  --color-ring: var(--im-ring);
+  --shadow-card: var(--im-shadow);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-canvas text-fg font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    min-height: 100dvh;
+  }
+  ::selection {
+    background: var(--im-accent-soft);
+  }
+  :focus-visible {
+    outline: 2px solid var(--im-ring);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  button,
+  [role='tab'],
+  [role='radio'],
+  summary,
+  label[for],
+  select {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  /* Thin, theme-aware scrollbars for code panels. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--im-line-strong) transparent;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-line bg-surface shadow-card;
+  }
+  .input {
+    @apply h-10 w-full rounded-lg border border-line-strong bg-surface px-3 text-sm text-fg
+      placeholder:text-fg-subtle transition-colors duration-150
+      hover:border-fg-subtle focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium tracking-wide text-fg-muted;
+  }
+  .kbd {
+    @apply rounded border border-line-strong bg-surface-2 px-1.5 py-0.5 font-mono text-[11px] text-fg-muted;
+  }
+  .code-scroll {
+    @apply overflow-auto font-mono text-[13px] leading-6;
+    tab-size: 2;
+  }
+  .syn-key { color: var(--im-syn-key); }
+  .syn-str { color: var(--im-syn-str); }
+  .syn-num { color: var(--im-syn-num); }
+  .syn-bool { color: var(--im-syn-bool); }
+  .syn-null { color: var(--im-syn-null); }
+  .syn-punct { color: var(--im-syn-punct); }
+}
+
+/* Background grid accent behind the hero — purely decorative. */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, var(--im-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--im-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+@keyframes im-shimmer {
+  100% { transform: translateX(100%); }
+}
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--im-surface-3);
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.12), transparent);
+  animation: im-shimmer 1.4s infinite;
+}
+
+@keyframes im-fade-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: im-fade-up 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes im-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
