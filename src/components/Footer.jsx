@@ -49,8 +49,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://github.com/hokacristian-kcs" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-fg-muted transition-colors hover:text-fg">
-                <GithubMark className="size-4" /> github.com/hokacristian-kcs
+              <a href="https://github.com/hokacristian" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-fg-muted transition-colors hover:text-fg">
+                <GithubMark className="size-4" /> github.com/hokacristian
               </a>
             </li>
           </ul>
@@ -59,7 +59,6 @@ export default function Footer() {
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-xs text-fg-muted sm:px-6">
           <span>© {new Date().getFullYear()} IndoMock · mock.hokacristian.com</span>
-          <span className="font-mono">Dibuat dengan kopi tubruk di Indonesia</span>
         </div>
       </div>
     </footer>

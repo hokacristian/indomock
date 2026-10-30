@@ -59,7 +59,7 @@ export default function Header({ theme, onToggleTheme }) {
             </a>
           ))}
           <a
-            href="https://github.com/hokacristian-kcs"
+            href="https://github.com/hokacristian"
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-9 items-center gap-1.5 rounded-lg px-2.5 text-sm text-fg-muted transition-colors duration-150 hover:bg-surface-2 hover:text-fg"
