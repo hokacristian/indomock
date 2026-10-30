@@ -1,0 +1,22 @@
+name: 'Feature request'
+description: 'Usulkan penambahan tipe data atau fitur baru untuk IndoMock'
+title: '[FEAT]: '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: Punya ide tipe data Indonesia baru (misal plat nomor, nama daerah baru, bank lokal, atau format transaksi)?
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Ide Fitur / Tipe Data
+      description: Jelaskan data atau fitur apa yang ingin ditambahkan.
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Skenario Penggunaan
+      description: Kenapa fitur ini berguna bagi developer lain?
+    validations:
+      required: false

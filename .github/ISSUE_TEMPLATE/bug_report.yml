@@ -1,0 +1,30 @@
+name: 'Bug report'
+description: 'Laporkan bug atau error data di IndoMock'
+title: '[BUG]: '
+labels: ['bug', 'triage']
+body:
+  - type: markdown
+    attributes:
+      value: Terima kasih sudah meluangkan waktu melaporkan bug untuk memajukan komunitas dev Indonesia!
+  - type: input
+    id: endpoint
+    attributes:
+      label: Endpoint yang Bermasalah
+      description: Misal `/api/v1/users?prov=jabar` atau halaman Web UI
+      placeholder: '/api/v1/...'
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Apa yang Terjadi?
+      description: Deskripsi jelas dan ringkas mengenai error yang ditemukan.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Perilaku yang Diharapkan
+      description: Apa yang seharusnya dihasilkan?
+    validations:
+      required: true

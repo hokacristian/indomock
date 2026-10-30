@@ -7,10 +7,11 @@
 
 <p align="center">
   <a href="https://mock.hokacristian.com"><img src="https://img.shields.io/badge/Live_Demo-mock.hokacristian.com-10b981?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Live Demo" /></a>
+  <a href="https://github.com/hokacristian/indomock/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/hokacristian/indomock/ci.yml?branch=main&style=for-the-badge&label=CI&logo=githubactions&logoColor=white" alt="CI Status" /></a>
   <img src="https://img.shields.io/badge/Node.js-v20+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node Version" />
   <img src="https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react&logoColor=black" alt="React 19" />
-  <img src="https://img.shields.io/badge/TailwindCSS-v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind v4" />
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge" alt="PRs Welcome" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" /></a>
 </p>
 
 ---
@@ -112,6 +113,12 @@ npm start
 ```
 
 Default server akan mendengarkan di `http://localhost:3006`.
+
+---
+
+## 🤝 Berkontribusi (Contributing)
+
+Kontribusi dalam bentuk penambahan data daerah, katalog produk lokal, atau pelaporan bug sangat terbuka lebar! Silakan baca panduan lengkap di [CONTRIBUTING.md](CONTRIBUTING.md) dan patuhi [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ---
 
